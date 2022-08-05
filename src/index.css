@@ -1,3 +1,5 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -47,4 +49,14 @@ justify-content: space-between;
 .user-menu p{
   display: inline-block;
   padding-left: 10px;
+}
+
+
+
+/*              POSTS                   */
+.posts{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
 }
