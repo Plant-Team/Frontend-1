@@ -27,24 +27,17 @@ const Post = () => {
 <Link to='/createpost'><button>ADD A POST</button></Link>
 
 
-<Container>
+
 
       <div className='posts'>
         {posts.map((post, index) => {
           return (
             <div key={index} >
             <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={'https://th.bing.com/th/id/OIP.2gFzJqRrYJf0lDly_8f2EQHaHa?pid=ImgDet&rs=1'} />
+              <Card.Img variant="top" src={post.image} />
               <Card.Body>
                 <Card.Title>{post.name}</Card.Title>
                 <Card.Text>{post.description}</Card.Text>
-                {/* </Card.Body>
-        <ListGroup className="list-group-flush">
-          <ListGroup.Item>Cras justo odio</ListGroup.Item>
-          <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-          <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-        </ListGroup>
-        <Card.Body> */}
                 <Card.Link href="#">Card Link</Card.Link>
                 <Card.Link href="#">Another Link</Card.Link>
               </Card.Body>
@@ -53,7 +46,7 @@ const Post = () => {
           );
         })}
       </div>
-</Container>
+
     </>
   );
 };
