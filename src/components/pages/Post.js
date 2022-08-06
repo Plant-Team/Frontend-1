@@ -38,8 +38,8 @@ const Post = () => {
               <Card.Body>
                 <Card.Title>{post.name}</Card.Title>
                 <Card.Text>{post.description}</Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
+                <Link to={`/plants/${post._id}`} ><button>Edit</button></Link>
+                <Card.Link>Delete</Card.Link>
               </Card.Body>
             </Card>
             </div>
