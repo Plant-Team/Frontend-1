@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
-import Container from 'react-bootstrap/Container';
 import { Link } from "react-router-dom";
 import Search from "./Search";
 // import ListGroup from "react-bootstrap/ListGroup";
@@ -39,13 +38,9 @@ setPosts(Search)
 
 }
   return (
-    <>
 
-<Search handleChange={handleChange} handleSearch={handleSearch}/>
-<Link to='/createpost'><button>ADD A POST</button></Link>
-
-
-
+<>
+  <Search handleChange={handleChange} handleSearch={handleSearch}/>
 
       <div className='posts'>
         {posts.map((post, index) => {
@@ -56,16 +51,14 @@ setPosts(Search)
               <Card.Body>
                 <Card.Title>{post.name}</Card.Title>
                 <Card.Text>{post.description}</Card.Text>
-                <Link to={`/plants/${post._id}`} ><button>Edit</button></Link>
-                <Card.Link>Delete</Card.Link>
+                <Link to={`/plants/${post._id}`} ><button className="card-btn">Edit</button></Link>
               </Card.Body>
             </Card>
             </div>
           );
         })}
       </div>
-
-    </>
+ </>
   );
 };
 
