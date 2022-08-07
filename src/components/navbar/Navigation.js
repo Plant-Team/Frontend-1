@@ -4,6 +4,7 @@ const Navigation = () => {
   return (
     <>
       <nav className="nav-bar">
+        
         <p>Plant app</p>
         <ul className="menu-nav" >
         <Link to='/home'><li>Home</li></Link>

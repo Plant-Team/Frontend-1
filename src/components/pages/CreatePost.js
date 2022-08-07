@@ -30,12 +30,28 @@ function handleSubmit(event) {
 
   return (
     <>
-      <h1> this is post</h1>
-      <form onSubmit={handleSubmit} className="signup-form">
+      
+      <form onSubmit={handleSubmit} className="create-form">
+
+      <div>
+        <label className="create-label" htmlFor="name">Name</label>
         <input onChange={handleChange} type="text" id="name" placeholder="name" />
+      </div>
+
+      <div>
+        <label className="create-label" htmlFor="image">Image</label>  
         <input onChange={handleChange} type="text" id="image" placeholder="image-url" />
+      </div>  
+
+      <div>
+        <label className="create-label" htmlFor="description">Description</label>
         <input onChange={handleChange} type="text" id="description" placeholder="description" />
+      </div>
+
+      <div>
+        <label className="create-label" htmlFor="location">Location</label>
         <input onChange={handleChange} type="text" id="location" placeholder="location" />
+      </div>
         <button type='submit'>Create</button>
       </form>
     </>

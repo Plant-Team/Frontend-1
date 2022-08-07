@@ -21,15 +21,7 @@ const EditPost = ({ match }) => {
 
   const handleChange = (event) => {
     setPost({ ...post, [event.target.id]: event.target.value });
-  };
-
-  const editShowPage = () => {
-    setModal(true);
-  };
-
-  const closeModal = () => {
-    setModal(false);
-  };
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -55,19 +47,34 @@ const EditPost = ({ match }) => {
   }
 
   return (
-    <section>
+    <section className="edit-wraper">
       <h2>Editing {post.name}</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">name</label>
-        <input onChange={handleChange} id="name" value={post.name} />
-        <label htmlFor="image">image</label>
-        <input onChange={handleChange} id="image" value={post.image} />
-		<label htmlFor="description">description</label>
-        <input onChange={handleChange} id="description" value={post.description} />
-		<label htmlFor="location">location</label>
-        <input onChange={handleChange} id="location" value={post.location} />
-        <button type="submit">Submit</button>
-        <button type="button" onClick={handleDelete}>delete</button>
+      <form onSubmit={handleSubmit} className='edit-form'>
+
+        <div>
+          <label htmlFor="name" className="edit-label">name</label>
+          <input onChange={handleChange} id="name" value={post.name} />
+        </div>
+
+        <div>
+          <label htmlFor="image" className="edit-label">image</label>
+          <input onChange={handleChange} id="image" value={post.image} />
+        </div>
+
+        <div>
+		      <label htmlFor="description" className="edit-label">description</label>
+          <input onChange={handleChange} id="description" value={post.description} />
+        </div>
+
+        <div>
+		      <label htmlFor="location" className="edit-label">location</label>
+          <input onChange={handleChange} id="location" value={post.location} />
+        </div>
+
+        <div className="btn-block">
+          <button type="submit" className="submit-btn">Submit</button>
+          <button type="button" className="delete-btn" onClick={handleDelete}>delete</button>
+        </div>
       </form>
     </section>
   );
