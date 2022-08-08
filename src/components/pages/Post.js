@@ -3,7 +3,6 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Search from "./Search";
 // import ListGroup from "react-bootstrap/ListGroup";
-
 const Post = () => {
   const [posts, setPosts] = useState([]);
   const [query, setQuery] = useState('')
@@ -11,7 +10,6 @@ const Post = () => {
     api: "https://secret-refuge-99565.herokuapp.com/api",
     endpoint: "/plants",
   };
-
   useEffect(() => {
     const url_api = `${url.api}${url.endpoint}`;
     fetch(url_api)
@@ -21,11 +19,9 @@ const Post = () => {
         setPosts(data);
       });
   }, []);
-
 function handleChange(event) {
 setQuery(event.target.value)
 }
-
 function handleSearch(event) {
   event.preventDefault()
   const Search = posts.filter((post) => {
@@ -35,18 +31,10 @@ function handleSearch(event) {
   })
 console.log(Search)
 setPosts(Search)
-
-          <img src={'https://i.imgur.com/1DZOV9D.jpeg'} alt={post.name}/>
-          <p>{post.name}</p>
-          <button>Edit</button>
-          <button>Delete</button>
-        </div>
 }
   return (
-
 <>
   <Search handleChange={handleChange} handleSearch={handleSearch}/>
-
       <div className='posts'>
         {posts.map((post, index) => {
           return (
@@ -66,5 +54,4 @@ setPosts(Search)
  </>
   );
 };
-
 export default Post;
