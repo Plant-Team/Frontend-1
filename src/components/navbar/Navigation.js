@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import 
 
 const Navigation = ( {signIn} ) => {
   return (
     <>
       <nav className="nav-bar">
         
-        <p>Plant app</p>
+        <p>Plant World</p>
         <ul className="menu-nav" >
         <Link to='/home'><li>Home</li></Link>
         {/* <Link to='/saved'><li>Saved</li></Link> */}
