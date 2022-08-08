@@ -7,8 +7,8 @@ const LandingNav = () => {
       <div className='landing-format'>
 
         <div>
-          <h1>Plant App</h1>
-          <p>join us with creating an account and trade some plants.</p>
+          <h1 className='landing-title'>Plant World</h1>
+          <p className='landing-text'>join us with creating an account and trade some plants.</p>
         </div>
   
         <form className='login-form'>
