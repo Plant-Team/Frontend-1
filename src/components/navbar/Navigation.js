@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Navigation = () => {
+const Navigation = ( {signIn} ) => {
   return (
     <>
       <nav className="nav-bar">
@@ -13,7 +13,7 @@ const Navigation = () => {
         <Link to='/About'><li>About</li></Link>
         </ul>
         <div className="user-menu">
-          <p>Welcome</p>
+          <p>Welcome {signIn.username}!</p>
           <Link to='/'><p>log out</p></Link>
         </div>
       </nav>

@@ -55,7 +55,7 @@ function App() {
     <>
 
 
-{location.pathname !== '/' && location.pathname !== '/SignUp'  ? <Navigation/> : null }
+{location.pathname !== '/' && location.pathname !== '/SignUp'  ? <Navigation signIn={signIn}/> : null }
     
       <main>
         <Routes>
