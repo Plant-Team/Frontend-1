@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import "./index.css";
-import { Routes, Route, useLocation, useNavigate} from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate, useParams} from "react-router-dom";
 
 // pages
 import Landing from "./components/pages/Landing";
@@ -13,6 +13,7 @@ import About from "./components/pages/About";
 import MyPosts from "./components/pages/MyPosts";
 import CreatePost from "./components/pages/CreatePost";
 import EditPost from "./components/pages/EditPost";
+import Profile from './components/pages/Profile';
 import axios from 'axios';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   const location = useLocation()
   const navigate = useNavigate()
 
+  // The signin state
    const [signIn, setSignIn] = useState({
     username: '',
     password: ''
@@ -27,6 +29,24 @@ function App() {
 //setting the token in state
    const [token, setToken] = useState('')
 
+// API call for user, sending it to Navigate
+// Profile State
+const [profile, setProfile] = useState(null)
+// 
+const {id} = useParams()
+// Use effect for profile
+useEffect(() => {
+  // write you fetch or axios here
+  axios
+    .get(`https://secret-refuge-99565.herokuapp.com/api/users/`)
+    .then((res) => {
+      console.log("response from data id", res);
+      setProfile(res);
+      console.log(profile)
+    });
+}, []);
+
+// Handlechange for logging in
    const handleChange = (event) => {
     setSignIn ({...signIn, [event.target.id]: event.target.value})
    }
@@ -55,7 +75,7 @@ function App() {
     <>
 
 
-{location.pathname !== '/' && location.pathname !== '/SignUp'  ? <Navigation signIn={signIn}/> : null }
+{location.pathname !== '/' && location.pathname !== '/SignUp'  ? <Navigation signIn={signIn} profile={profile}/> : null }
     
       <main>
         <Routes>
@@ -64,9 +84,9 @@ function App() {
           <Route path="/home" element={<Home token={token}/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/myposts" element={<MyPosts/>} />
-          <Route path="/createpost" element={<CreatePost/>} />
-          <Route path="/createpost" element={<CreatePost/>} />
-          <Route path='/plants/:id' element={<EditPost/>}/>
+          <Route path="/createpost" element={<CreatePost token={token}/>} />
+          <Route path='/plants/:id' element={<EditPost token={token}/>}/>
+          <Route path='/Profile/:id' element={<Profile token={token} profile={profile}/>}/>
          
           {/* <Route path="/saved" element={<Saved/>} /> */}
         </Routes>

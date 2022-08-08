@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Search from "./Search";
+
 // import ListGroup from "react-bootstrap/ListGroup";
 const Post = ({ token }) => {
   const [posts, setPosts] = useState([]);
   const [query, setQuery] = useState('')
-  
-  // Token variable
 
   const url = {
     api: "https://secret-refuge-99565.herokuapp.com/api",

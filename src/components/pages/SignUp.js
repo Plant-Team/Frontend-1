@@ -21,7 +21,7 @@ const SignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios.post(`https://secret-refuge-99565.herokuapp.com/api/users/signup`, user)
-    .then(() => (navigate('/home')))
+    .then(() => (navigate('/')))
   }
 
   return (
