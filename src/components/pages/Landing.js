@@ -1,7 +1,7 @@
 
 import {Link} from 'react-router-dom'
 
-const LandingNav = () => {
+const LandingNav = ( {handleChange, handleSubmit} ) => {
     return (
       <>
       <div className='landing-format'>
@@ -11,11 +11,11 @@ const LandingNav = () => {
           <p>join us with creating an account and trade some plants.</p>
         </div>
   
-        <form className='login-form'>
+        <form onSubmit={handleSubmit} className='login-form'>
         <label htmlFor="username">username</label>
-          <input type="text" id="username" placeholder="username" />
+          <input onChange={(event) => handleChange (event)} type="text" id="username" placeholder="username" />
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" placeholder="password" />
+          <input onChange={(event) => handleChange (event)} type="password" id="password" placeholder="password" />
           <button>Login</button>
           <p className='create-account'><Link className='create-account-link'  to='/SignUp'>Create an Account</Link></p>
         </form>
