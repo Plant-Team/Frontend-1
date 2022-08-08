@@ -1,11 +1,11 @@
 import Post from "./Post";
 
 
-const Home = () => {
+const Home = ({ token }) => {
     return (
       <>
       
-      <Post/>
+      <Post token={token}/>
       </>
     );
   };

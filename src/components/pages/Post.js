@@ -3,16 +3,23 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Search from "./Search";
 // import ListGroup from "react-bootstrap/ListGroup";
-const Post = () => {
+const Post = ({ token }) => {
   const [posts, setPosts] = useState([]);
   const [query, setQuery] = useState('')
+  
+  // Token variable
+
   const url = {
     api: "https://secret-refuge-99565.herokuapp.com/api",
     endpoint: "/plants",
   };
+  
+  const config = {headers: {Authorization: `Bearer ${token}`}}
+
   useEffect(() => {
     const url_api = `${url.api}${url.endpoint}`;
-    fetch(url_api)
+    console.log('config is' + config)
+    fetch(url_api, config)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -31,6 +38,7 @@ function handleSearch(event) {
   })
 console.log(Search)
 setPosts(Search)
+
 }
   return (
 <>
@@ -55,3 +63,14 @@ setPosts(Search)
   );
 };
 export default Post;
+
+
+
+
+
+
+
+
+
+
+
