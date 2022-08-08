@@ -340,3 +340,20 @@ color: white;
   display: flex;
   gap: 20px;
 }
+
+
+
+/*        ABOUT PAGE         */
+
+.about-title{
+  margin-top: 30px;
+  color: #264653
+}
+.about {
+  color: #264653;
+  text-align: center;
+}
+.about-text{
+  margin: 20px 190px;
+  text-align: center;
+}
