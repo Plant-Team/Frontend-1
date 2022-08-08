@@ -1,50 +1,342 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
 
 
 /*           LANDING PAGE       */
+
 .landing-format {
+
   display: flex;
   justify-content: space-around;
+  height: 100vh;
+  align-items: center;
 }
 
 .login-form {
+  font-family: 'Open Sans';
   display: flex;
   flex-direction: column;
 }
 
+.login-form label {
+  font-size: 18px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+}
+
+.login-form input{
+  border: none;
+  font-size: 13px;
+  border-bottom: 1px solid #264653;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.login-form button{
+  font-family: 'Open Sans';
+  height:50px; 
+  border-radius: 0px 20px;
+  background-image: linear-gradient(to right, #264653 , #2a9d8f);
+  border:none;
+  color:white;
+  font-weight:bold;
+}
+
+.create-account{
+  font-family: 'Open Sans';
+  margin-top:30px;
+  text-align: center;
+  text-decoration: none;
+  
+  
+}
+
+.create-account-link{
+  text-decoration: none;
+  color: black;
+}
+
+.create-account-link:hover{
+  color: green;
+}
+
+
+
+
+
+
 /*          SIGNUP PAGE         */
+
+.signup-background {
+  background-color:#264653;
+  width: 500px;
+  height: 520px;
+  margin: 0 auto;
+  margin-top: 30px;
+ 
+}
 .signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:20px;
+}
+
+.label{
+  font-family: 'open sans';
+  font-size: 16px;
+  color: white;
+  display: block;
+}
+
+
+.signup-form input {
+  font-family: 'open sans';
+  font-size: 13px;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  width: 300px;
+  margin-bottom: 20px;
+  color: lightgrey;
+}
+
+.signup-form button{
+  font-family: 'Open Sans';
+  font-size: 14px;
+  width: 100px;
+  height:40px; 
+  border-radius: 0px 20px;
+  background-color: white;
+  border:none;
+  color:black;
+  font-weight:bold;
+}
+
+/*         NAVIGATION          */
+
+.nav-bar {
+display: flex;
+justify-content: space-between;
+background-color: #264653;
+height: 9vh ;
+align-items: center;
+padding:10px 20px 0px 20px ;
+color: white;
+}
+
+.menu-nav li{
+  font-family: 'open sans';
+  font-size: 14px;
+  display: inline-block;
+  padding-left: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-bar p{
+  font-family: 'open sans';
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block; 
+}
+
+.user-menu p{
+  font-family: 'open sans';
+  font-weight: 300;
+  font-size: 14px; 
+  display: inline-block;
+  padding-left: 10px;
+}
+
+
+
+/*              POSTS                   */
+
+.posts{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+  width: 100%;
+  height: 202px;
+}
+
+.card-btn{
+  font-family: 'open sans';
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  width: 100px;
+  border-radius: 20px;
+  color: white;
+
+  background-image: linear-gradient(to right, #264653 , #2a9d8f);
+
+
+}
+
+
+
+
+
+
+/*           SEARCH COMPO             */
+
+.search-wrapper{
+  display: flex;
+  margin-top:50px;
+  margin-bottom: 30px;
+  justify-content: center;
+  
+}
+
+.search-form{
+  display: flex;
+  justify-content: center;
+  
+  
+}
+
+.search-form input{
+  font-family: 'open sans';
+  font-size: 14px;
+  width: 300px;
+  /* border-right: none; */
+  border: 1px solid black;
+
+}
+
+
+.search-form button{
+  font-family: 'open sans';
+  font-size: 12px;
+  border: none;
+ 
+}
+
+.add-post{
+  font-family: 'open sans';
+  font-size: 14px;
+  border: none;
+  margin-left: 20px;
+}
+
+
+/*                  CREATE A POST         */
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+  justify-content: center;
+}
+
+.create-form input {
+  font-family: 'open sans';
+  font-size: 13px;
+  font-weight: 300;
+  border: none;
+  border-bottom: 1px solid green;
+  background-color: transparent;
+  width: 300px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+
+.create-label{
+  font-family: 'open sans';
+  font-size: 16px;
+  color: black;
+  display: block;
+  font-weight: 600;
+}
+
+.create-form button{
+  font-family: 'Open Sans';
+  width: 100px;
+  height:50px; 
+  border-radius: 0px 20px;
+  background-image: linear-gradient(to right, #264653 , #2a9d8f);
+  border:none;
+  color:white;
+  font-weight:bold;
+}
+
+
+/*                      EDIT POST              */
+
+.edit-wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+  justify-content: center;
+}
+
+.edit-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/*         NAVIGATION          */
-.nav-bar {
-display: flex;
-justify-content: space-between;
+.edit-label {
+  font-family: 'open sans';
+  font-size: 16px;
+  color: black;
+  display: block;
+  font-weight: 600;
 }
 
-.menu-nav li{
-  display: inline-block;
-  padding-left: 10px;
-  text-decoration: none;
+.edit-form input {
+  font-family: 'open sans';
+  font-size: 13px;
+  font-weight: 300;
+  border: none;
+  border-bottom: 1px solid green;
+  background-color: transparent;
+  width: 300px;
+  margin-bottom: 20px;
   color: black;
 }
 
-.user-menu p{
-  display: inline-block;
-  padding-left: 10px;
+.submit-btn {
+  font-family: 'Open Sans';
+  width: 100px;
+  height:40px; 
+  border-radius: 0px 20px;
+  background-image: linear-gradient(to right, #264653 , #2a9d8f);
+  border:none;
+  color:white;
+  font-weight:bold;
+}
+
+.delete-btn {
+  font-family: 'Open Sans';
+  width: 100px;
+  height:40px; 
+  border-radius: 0px 20px;
+  background-color: red;
+  border:none;
+  color:white;
+  font-weight:bold;
+}
+
+.btn-block {
+  display: flex;
+  gap: 20px;
 }

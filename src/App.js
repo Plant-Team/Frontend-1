@@ -11,6 +11,8 @@ import Home from "./components/pages/Home";
 // import Saved from "./components/pages/Saved";
 import About from "./components/pages/About";
 import MyPosts from "./components/pages/MyPosts";
+import CreatePost from "./components/pages/CreatePost";
+import EditPost from "./components/pages/EditPost";
 
 function App() {
 
@@ -33,6 +35,10 @@ function App() {
           <Route path="/home" element={<Home/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/myposts" element={<MyPosts/>} />
+          <Route path="/createpost" element={<CreatePost/>} />
+          <Route path="/createpost" element={<CreatePost/>} />
+          <Route path='/plants/:id' element={<EditPost/>}/>
+         
           {/* <Route path="/saved" element={<Saved/>} /> */}
         </Routes>
       </main>

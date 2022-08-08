@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
-// import axios from 'axios'
+import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
+import Search from "./Search";
+// import ListGroup from "react-bootstrap/ListGroup";
 
 const Post = () => {
   const [posts, setPosts] = useState([]);
+  const [query, setQuery] = useState('')
   const url = {
     api: "https://secret-refuge-99565.herokuapp.com/api",
     endpoint: "/plants",
@@ -13,29 +17,53 @@ const Post = () => {
     fetch(url_api)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setPosts(data);
       });
   }, []);
 
-  return (
-    <>
-   <div>
-    {posts.map((post,index) => {
-      return (
-        <div key={index}>
+function handleChange(event) {
+setQuery(event.target.value)
+}
+
+function handleSearch(event) {
+  event.preventDefault()
+  const Search = posts.filter((post) => {
+    if(post.name) {
+      return post.name.includes(query)
+    }
+  })
+console.log(Search)
+setPosts(Search)
 
           <img src={'https://i.imgur.com/1DZOV9D.jpeg'} alt={post.name}/>
           <p>{post.name}</p>
           <button>Edit</button>
           <button>Delete</button>
         </div>
+}
+  return (
 
-      )
-    })}
-   </div>
+<>
+  <Search handleChange={handleChange} handleSearch={handleSearch}/>
 
-    </>
+      <div className='posts'>
+        {posts.map((post, index) => {
+          return (
+            <div key={index} >
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src={post.image} />
+              <Card.Body>
+                <Card.Title>{post.name}</Card.Title>
+                <Card.Text>{post.description}</Card.Text>
+                <Link to={`/plants/${post._id}`} ><button className="card-btn">Edit</button></Link>
+              </Card.Body>
+            </Card>
+            </div>
+          );
+        })}
+      </div>
+ </>
   );
 };
 
