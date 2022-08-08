@@ -17,7 +17,7 @@ const Post = () => {
     fetch(url_api)
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setPosts(data);
       });
   }, []);

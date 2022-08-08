@@ -1,39 +1,89 @@
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
 const SignUp = () => {
+
+  const navigate = useNavigate()
+  const [user, setUser] = useState({
+      firstName: '',
+      lastName: '',
+      username: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+  })
+
+  const handleChange = (event) => {
+    setUser({ ...user, [event.target.id]: event.target.value })
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    axios.post(`https://secret-refuge-99565.herokuapp.com/api/users/signup`, user)
+    .then(() => (navigate('/home')))
+  }
+
   return (
     <>
       <div className="signup-background">
-        <form className="signup-form">
+        <form onSubmit={handleSubmit} className="signup-form">
           <div>
-            <label className="label" htmlFor="name">Name</label>
-            <input type="text" id="name" placeholder="name" />
+            <label className="label" htmlFor="firstName">First Name</label>
+            <input
+            onChange={handleChange}
+             type="text"
+             id="firstName"
+             placeholder="firstName" />
           </div>
 
           <div>
             <label className="label" htmlFor="lastName">Last Name</label>
-            <input type="text" id="LastName" placeholder="last name" />
+            <input
+            onChange={handleChange}
+            type="text"
+            id="lastName"
+            placeholder="last name" />
           </div>
 
           <div>
             <label className="label" htmlFor="username">username</label>
-            <input type="text" id="username" placeholder="user name" />
+            <input
+            onChange={handleChange}
+            type="text"
+            id="username"
+            placeholder="user name" />
           </div>
 
           <div>
             <label className="label" htmlFor="Email">Email</label>
-            <input type="email" id="email" placeholder="write Your email" />
+            <input
+            onChange={handleChange}
+            type="email"
+            id="email"
+            placeholder="write Your email" />
           </div>
 
           <div>
             <label className="label" htmlFor="Password">Password</label>
-            <input type="password" id="password" placeholder="password" />
+            <input
+            onChange={handleChange}
+            type="password"
+            id="password"
+            placeholder="password" />
           </div>
 
           <div>
-            <label className="label" htmlFor="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" placeholder="confirm password" />
+            <label className="label" htmlFor="confirmPassword">Confirm Password</label>
+            <input
+            onChange={handleChange}
+            type="password"
+            id="confirmPassword"
+            placeholder="confirm password" />
           </div>
 
-          <button>Sign up</button>
+          <button type='submit'>Sign up</button>
+
         </form>
       </div>
     </>
