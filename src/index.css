@@ -347,13 +347,22 @@ color: white;
 
 .about-title{
   margin-top: 30px;
-  color: #264653
+  margin-left: 30px;
+  color: #264653;
+  font-family:'Quicksand', sans-serif;
 }
 .about {
   color: #264653;
   text-align: center;
+  font-family:'Quicksand', sans-serif;
 }
 .about-text{
   margin: 20px 190px;
   text-align: center;
+  font-family:'Quicksand', sans-serif;
+  font-size: 19px;
+}
+.about-image{
+height: 60vh;
+width: 100vw;
 }
