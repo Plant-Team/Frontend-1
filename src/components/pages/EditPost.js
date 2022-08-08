@@ -2,17 +2,18 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const EditPost = ({ match }) => {
+const EditPost = ({ token }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
   const [post, setPost] = useState(null);
-  const [modal, setModal] = useState(false);
+
+  const config = {headers: {Authorization: `Bearer ${token}`}}
 
   useEffect(() => {
     // write you fetch or axios here
     axios
-      .get(`https://secret-refuge-99565.herokuapp.com/api/plants/${id}`)
+      .get(`https://secret-refuge-99565.herokuapp.com/api/plants/${id}`, config)
       .then((res) => {
         console.log("response from data id", res);
         setPost(res.data);
@@ -27,7 +28,7 @@ const EditPost = ({ match }) => {
     event.preventDefault();
     // Write your PUT fetch() or axios() request here
     axios
-      .put(`https://secret-refuge-99565.herokuapp.com/api/plants/${id}`, post)
+      .put(`https://secret-refuge-99565.herokuapp.com/api/plants/${id}`, post, config)
       .then(() => {
         navigate("/home");
       });
@@ -36,7 +37,7 @@ const EditPost = ({ match }) => {
   const handleDelete = () => {
     // Write your DELETE fetch() or axios() request here
     axios
-      .delete(`https://secret-refuge-99565.herokuapp.com/api/plants/${id}`)
+      .delete(`https://secret-refuge-99565.herokuapp.com/api/plants/${id}`, config)
       .then(() => {
         navigate("/home");
       });

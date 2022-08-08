@@ -2,7 +2,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
-const CreatePost = () => {
+const CreatePost = ( {token} ) => {
 
 
   const navigate = useNavigate();
@@ -13,6 +13,8 @@ const CreatePost = () => {
     location: "",
   });
 
+  const config = {headers: {Authorization: `Bearer ${token}`}}
+
 
 function handleChange(event) {
 setPost({...post, [event.target.id]: event.target.value })
@@ -20,7 +22,7 @@ setPost({...post, [event.target.id]: event.target.value })
 
 function handleSubmit(event) {
     event.preventDefault()
-    axios.post('https://secret-refuge-99565.herokuapp.com/api/plants', post)
+    axios.post('https://secret-refuge-99565.herokuapp.com/api/plants', post, config)
     .then(() => {
         console.log(post)
         navigate('/home')
