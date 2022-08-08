@@ -27,6 +27,8 @@ const Post = () => {
 
           <img src={'https://i.imgur.com/1DZOV9D.jpeg'} alt={post.name}/>
           <p>{post.name}</p>
+          <button>Edit</button>
+          <button>Delete</button>
         </div>
 
       )
