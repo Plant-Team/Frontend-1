@@ -86,7 +86,7 @@ useEffect(() => {
           <Route path="/myposts" element={<MyPosts/>} />
           <Route path="/createpost" element={<CreatePost token={token}/>} />
           <Route path='/plants/:id' element={<EditPost token={token}/>}/>
-          <Route path='/Profile/:id' element={<Profile token={token} profile={profile}/>}/>
+          <Route path='/Profile/' element={<Profile token={token} profile={profile}/>}/>
          
           {/* <Route path="/saved" element={<Saved/>} /> */}
         </Routes>
