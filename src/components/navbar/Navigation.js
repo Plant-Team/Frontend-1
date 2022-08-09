@@ -15,7 +15,7 @@ const Navigation = ( {signIn, profile} ) => {
         <Link to='/About'><li>About</li></Link>
         </ul>
         <div className="user-menu">
-          <p>Welcome <Link to={`/Profile/`}>{signIn.username}!</Link></p>
+          <p>Welcome <Link to={`/Profile`}>{signIn.username}!</Link></p>
           <Link to='/'><p>log out</p></Link>
         </div>
       </nav>
