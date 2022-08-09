@@ -139,6 +139,7 @@ color: white;
   padding-left: 10px;
   text-decoration: none;
   color: white;
+  margin: 0 10px;
 }
 
 .nav-bar p{
@@ -400,4 +401,12 @@ width: 100vw;
 }
 .landing-text{
   font-family:'Quicksand', sans-serif;
+}
+
+@media (max-width: 678px) {
+  .menu-nav li {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+  }
 }

@@ -11,7 +11,7 @@ const Navigation = ( {signIn, profile} ) => {
         <ul className="menu-nav" >
         <Link to='/home'><li>Home</li></Link>
         {/* <Link to='/saved'><li>Saved</li></Link> */}
-        <Link to='/myposts'><li>My Posts</li></Link>
+        {/* <Link to='/myposts'><li>My Posts</li></Link> */}
         <Link to='/About'><li>About</li></Link>
         </ul>
         <div className="user-menu">
