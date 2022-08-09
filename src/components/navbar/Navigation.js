@@ -4,6 +4,10 @@ import { useEffect, useState } from "react";
 
 import { RiPlantLine } from "react-icons/ri";
 
+
+
+
+
 const Navigation = ( {signIn, token} ) => {
   // console.log('nav console', profile)
   // const {id} = useParams()

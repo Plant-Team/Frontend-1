@@ -46,7 +46,7 @@ useEffect(() => {
       // write a loop through each profile...
       var n = 1
       for(let i = 0; i< res.data.length;i++) {
-        console.log("one")
+        console.log()
       }
       // if res.data's [i].username (set a variable for this named findProfile) matches the signIn .username then set profile to res.data[the index._id]
     setProfile(res.data[(n)]._id);
