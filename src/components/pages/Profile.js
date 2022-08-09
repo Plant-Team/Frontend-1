@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import axios from "axios";
 
-const Profile = ( { profile } ) => {  
-const [isprofile, setIsProfile] = useState(profile)
+const Profile = (  ) => {  
+const [isprofile, setIsProfile] = useState(null)
 
 
 const { id } = useParams();
@@ -14,15 +14,15 @@ const navigate = useNavigate();
 
 // const config = {headers: {Authorization: `Bearer ${token}`}}
 
-// useEffect(() => {
-//   // write you fetch or axios here
-//   axios
-//     .get(`https://secret-refuge-99565.herokuapp.com/api/users/${id}`, config)
-//     .then((res) => {
-//       console.log("response from data id", res);
-//       setPost(res.data);
-//     });
-// }, [id]);
+useEffect(() => {
+  // write you fetch or axios here
+  axios
+    .get(`https://secret-refuge-99565.herokuapp.com/api/users/${id}`)
+    .then((res) => {
+      console.log("response from data id", res);
+      setIsProfile(res.data);
+    });
+}, [id]);
 
 const handleChange = (event) => {
   setIsProfile({ ...isprofile, [event.target.id]: event.target.value });
