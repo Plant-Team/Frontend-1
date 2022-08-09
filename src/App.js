@@ -40,9 +40,9 @@ useEffect(() => {
   axios
     .get(`https://secret-refuge-99565.herokuapp.com/api/users/`)
     .then((res) => {
-      console.log("response from data id", res);
-      setProfile(res);
-      console.log(profile)
+      
+      setProfile(res.data);
+      console.log("response from data id", profile)
     });
 }, []);
 
@@ -50,6 +50,7 @@ useEffect(() => {
    const handleChange = (event) => {
     setSignIn ({...signIn, [event.target.id]: event.target.value})
    }
+   console.log(signIn)
   const loginUrl = `https://secret-refuge-99565.herokuapp.com/api/users/signin`
   const config = {
     headers: {
@@ -62,7 +63,6 @@ useEffect(() => {
     event.preventDefault()
   axios.post(loginUrl, signIn, config)
     .then(res => {
-      console.log('response', res)
       console.log(res.data)
       setToken(res.data.token)
       (navigate('/home'))
