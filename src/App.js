@@ -33,6 +33,9 @@ function App() {
 // Profile State
 const [profile, setProfile] = useState(null)
 // 
+
+const [findProfile, setFindProfile] = useState(null)
+
 const {id} = useParams()
 // Use effect for profile
 useEffect(() => {
@@ -40,19 +43,23 @@ useEffect(() => {
   axios
     .get(`https://secret-refuge-99565.herokuapp.com/api/users/`)
     .then((res) => {
-
-      // const findProfile = res.data
-      // while (findProfile[(i)] !== ) 
-      // write a loop through each profile... if res.data's [i].username (set a variable for this named findProfile) matches the signIn .username then set profile to res.data[the index._id]
-    setProfile(res.data[3]._id);
-    console.log("The profile on App is", profile)
-    });
+      // write a loop through each profile...
+      var n = 1
+      for(let i = 0; i< res.data.length;i++) {
+        console.log("one")
+      }
+      // if res.data's [i].username (set a variable for this named findProfile) matches the signIn .username then set profile to res.data[the index._id]
+    setProfile(res.data[(n)]._id);
+    console.log("The profiles on App are", res.data)
+    })
+      
+    
 }, []);
 
 // Handlechange for logging in
    const handleChange = (event) => {
     setSignIn ({...signIn, [event.target.id]: event.target.value})
-    console.log(signIn)
+    console.log("signin username is", signIn.username)
    }
   const loginUrl = `https://secret-refuge-99565.herokuapp.com/api/users/signin`
   const config = {
@@ -66,7 +73,7 @@ useEffect(() => {
     event.preventDefault()
   axios.post(loginUrl, signIn, config)
     .then(res => {
-      console.log("the data is" + res.data)
+      // console.log("the data is" + res.data)
       setToken(res.data.token)
       (navigate('/home'))
     })

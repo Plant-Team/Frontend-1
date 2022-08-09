@@ -21,7 +21,7 @@ const Post = ({ token }) => {
     fetch(url_api, config)
       .then((response) => response.json())
       .then((data) => {
-        console.log(`the data is` + data);
+        console.log(`the data is`, data);
         setPosts(data);
       });
   }, []);
