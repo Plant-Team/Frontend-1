@@ -36,3 +36,6 @@ We used jira to track our progress and to not stray away from accomplishing our 
 Once our components were created, the biggest challenge was working around Authorization in order to pull information that required permissions. What we ended up with was pretty basic, but it works. There's still a lot to learn about the relationship between Frontend and Backend when Auth is in between the two, and in the future, we should probably have left Authorization to the end of the project.
 
 [CLICK THIS LINK TO VISIT THE LIVE SITE](https://chimerical-malabi-77d9ef.netlify.app/)
+
+## UNSOLVED ISSUES
+Users cannot edit their passwords, as we need to de-encrypt the password in order to edit it. This was a stretch goal feature that didn't pan out since Auth is very complicated.
