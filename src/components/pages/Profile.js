@@ -17,16 +17,15 @@ const navigate = useNavigate();
 useEffect(() => {
   // write you fetch or axios here
   axios
-    .get(`https://secret-refuge-99565.herokuapp.com/api/users/${profile}`)
+    .get(`https://secret-refuge-99565.herokuapp.com/api/users/${id}`)
     .then((res) => {
-      console.log("response from profile id", res);
+      console.log("response from data id", res);
       setIsProfile(res.data);
     });
-}, []);
+}, [id]);
 
 const handleChange = (event) => {
   setIsProfile({ ...isprofile, [event.target.id]: event.target.value });
-  console.log("id is", id)
 }
 
 const handleSubmit = (event) => {
