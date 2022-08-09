@@ -40,7 +40,11 @@ useEffect(() => {
   axios
     .get(`https://secret-refuge-99565.herokuapp.com/api/users/`)
     .then((res) => {
-    setProfile(res.data[1]._id);
+
+      // const findProfile = res.data
+      // while (findProfile[(i)] !== ) 
+      // write a loop through each profile... if res.data's [i].username (set a variable for this named findProfile) matches the signIn .username then set profile to res.data[the index._id]
+    setProfile(res.data[3]._id);
     console.log("The profile on App is", profile)
     });
 }, []);
@@ -48,6 +52,7 @@ useEffect(() => {
 // Handlechange for logging in
    const handleChange = (event) => {
     setSignIn ({...signIn, [event.target.id]: event.target.value})
+    console.log(signIn)
    }
   const loginUrl = `https://secret-refuge-99565.herokuapp.com/api/users/signin`
   const config = {
