@@ -50,7 +50,7 @@ Step 2
 Then we created wireframes. Our wireframes were the guide for the Frontend, and from those we could figure out our components.
 
 ## Wireframes
-These were the concepts for the site I created in Google Slides.
+These were the concepts for the site created in canva.
 ![alt text](https://)
 ![alt text](https://)
 ![alt text](https://)

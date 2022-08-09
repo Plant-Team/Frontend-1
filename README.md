@@ -22,7 +22,7 @@ All you need to work PLANT WORLD is a modern web browser and you're good to go!
 - _As a user, I want to be able to delete plants, and if I need to, delete my account._
 
 ## WIREFRAMES
-These were the concepts for the site I created in Google Slides.
+These were the concepts for the site created in canva.
 ![alt text](https://)
 ![alt text](https://)
 ![alt text](https://)
