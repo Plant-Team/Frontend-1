@@ -8,6 +8,7 @@ import { RiPlantLine } from "react-icons/ri";
 
 
 
+
 const Navigation = ( {signIn, token} ) => {
   // console.log('nav console', profile)
   // const {id} = useParams()
@@ -50,9 +51,8 @@ const Navigation = ( {signIn, token} ) => {
       <nav className="nav-bar">
         
 
-        <Link to='/'><p>Plant World</p></Link>
+        <Link to='/'><p className="app-title">Plant World <RiPlantLine /></p></Link>
 
-        <p>Plant World <RiPlantLine /></p>
 
         <ul className="menu-nav" >
         <Link to='/home'><li>Home</li></Link>

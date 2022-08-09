@@ -135,11 +135,17 @@ color: white;
 .menu-nav li{
   font-family:'Quicksand', sans-serif;
   font-size: 17px;
+  font-weight: bold;
   display: inline-block;
-  padding-left: 10px;
+  padding: 10px;
   text-decoration: none;
   color: white;
-  margin: 0 10px;
+  
+ 
+}
+.menu-nav li:hover{
+  background-color: #2a9d8f;
+  border-radius: 20px;
 }
 
 .nav-bar p{
@@ -407,6 +413,9 @@ width: 100vw;
   .menu-nav li {
     display: flex;
     justify-content: space-between;
-    text-decoration: none;
+    padding: 2px;
   }
+}
+.app-title{
+  color: white
 }
