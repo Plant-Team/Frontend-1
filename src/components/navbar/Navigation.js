@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import 
+import { RiPlantLine } from "react-icons/ri";
 
 const Navigation = ( {signIn, profile} ) => {
   console.log(profile)
@@ -7,7 +7,7 @@ const Navigation = ( {signIn, profile} ) => {
     <>
       <nav className="nav-bar">
         
-        <p>Plant World</p>
+        <p>Plant World <RiPlantLine /></p>
         <ul className="menu-nav" >
         <Link to='/home'><li>Home</li></Link>
         {/* <Link to='/saved'><li>Saved</li></Link> */}
@@ -15,7 +15,7 @@ const Navigation = ( {signIn, profile} ) => {
         <Link to='/About'><li>About</li></Link>
         </ul>
         <div className="user-menu">
-          <p>Welcome <Link to={`/Profile`}>{signIn.username}!</Link></p>
+          <p>Welcome <Link to={`/Profile`}>{signIn.username}</Link></p>
           <Link to='/'><p>log out</p></Link>
         </div>
       </nav>
