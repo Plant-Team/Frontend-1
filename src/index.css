@@ -463,9 +463,26 @@ width: 100vw;
 
 @media (max-width: 678px) {
   .menu-nav li {
-    display: flex;
+    display: none;
     justify-content: space-between;
     padding: 2px;
+  }
+  .search-form {
+  width: 50%;
+  height: 25px;
+  }
+  .add-post{
+    width: 60px;
+  }
+  .user-menu{
+    display: none;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .add-post {
+    display: none;
   }
 }
 .app-title{

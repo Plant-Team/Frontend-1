@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 import { RiPlantLine } from "react-icons/ri";
 
+import { CgMenuRound } from "react-icons/cg";
+
 
 
 
@@ -58,9 +60,9 @@ const Navigation = ( {signIn, token} ) => {
         {/* <Link to='/saved'><li>Saved</li></Link> */}
         {/* <Link to='/myposts'><li>My Posts</li></Link> */}
         <Link to='/About'><li>About</li></Link>
+        <CgMenuRound size={30} />
         </ul>
         <div className="user-menu">
-
           <p className="welcome">Welcome <Link to={`/Profile/${users}`}>{signIn.username}!</Link></p>
 
 
