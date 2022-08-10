@@ -43,3 +43,5 @@ Once our components were created, the biggest challenge was working around Autho
 [CLICK THIS LINK TO VISIT THE LIVE SITE](https://chimerical-malabi-77d9ef.netlify.app/)
 
 [CLICK THIS LINK TO VISIT PLANNING STAGES](https://media.git.generalassemb.ly/user/43502/files/29c0fa4a-13a8-4c74-bf04-4829dc3c3af4)
+
+[CLICK THIS LINK TO VISIT THE BACKEND REPO](https://github.com/Plant-Team/Backend)
