@@ -29,20 +29,20 @@ const SignUp = () => {
       <div className="signup-background">
         <form onSubmit={handleSubmit} className="signup-form">
           <div>
-            <label className="label" htmlFor="firstName">First Name</label>
+            <label className="label" htmlFor="firstname">First Name</label>
             <input
             onChange={handleChange}
              type="text"
-             id="firstName"
+             id="firstname"
              placeholder="firstName" />
           </div>
 
           <div>
-            <label className="label" htmlFor="lastName">Last Name</label>
+            <label className="label" htmlFor="lastname">Last Name</label>
             <input
             onChange={handleChange}
             type="text"
-            id="lastName"
+            id="lastname"
             placeholder="last name" />
           </div>
 

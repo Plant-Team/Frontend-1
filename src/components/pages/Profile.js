@@ -57,13 +57,13 @@ return (
     <form onSubmit={handleSubmit} className='edit-form'>
 
       <div>
-        <label htmlFor="firstName" className="edit-label">first name</label>
-        <input onChange={handleChange} id="firstName" value={isprofile.firstName} />
+        <label htmlFor="firstname" className="edit-label">first name</label>
+        <input onChange={handleChange} id="firstname" value={isprofile.firstname} />
       </div>
 
       <div>
-        <label htmlFor="lastName" className="edit-label">last name</label>
-        <input onChange={handleChange} id="lastName" value={isprofile.lastName} />
+        <label htmlFor="lastname" className="edit-label">last name</label>
+        <input onChange={handleChange} id="lastname" value={isprofile.lastname} />
       </div>
 
       <div>
@@ -81,10 +81,10 @@ return (
         <input onChange={handleChange} id="password" value={isprofile.password} />
       </div>
 
-      <div>
+      {/* <div>
             <label htmlFor="confirmPassword" className="edit-label">confirm password</label>
         <input onChange={handleChange} id="confirmPassword" value={isprofile.confirmPassword} />
-      </div>
+      </div> */}
 
       <div className="btn-block">
         <button type="submit" className="submit-btn">Submit</button>
