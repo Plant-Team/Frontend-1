@@ -58,12 +58,12 @@ return (
 
       <div>
         <label htmlFor="firstName" className="edit-label">first name</label>
-        <input onChange={handleChange} id="firstName" value={isprofile.firstName} />
+        <input onChange={handleChange} id="firstName" value={isprofile.firstname} />
       </div>
 
       <div>
         <label htmlFor="lastName" className="edit-label">last name</label>
-        <input onChange={handleChange} id="lastName" value={isprofile.lastName} />
+        <input onChange={handleChange} id="lastName" value={isprofile.lastname} />
       </div>
 
       <div>
