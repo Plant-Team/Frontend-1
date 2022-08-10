@@ -24,33 +24,43 @@ function App() {
   // The signin state
    const [signIn, setSignIn] = useState({
     username: '',
-    password: ''
+    password: '', 
+    valid:''
    })
 //setting the token in state
    const [token, setToken] = useState('')
 
-// API call for user, sending it to Navigate
-// Profile State
-// const [profile, setProfile] = useState(null)
-// // 
-// const {id} = useParams()
-// // Use effect for profile
-// useEffect(() => {
-//   // write you fetch or axios here
-//   axios
-//     .get(`https://secret-refuge-99565.herokuapp.com/api/users/`)
-//     .then((res) => {
-      
-//       setProfile(res.data[1]._id);
-//       console.log("response from data id App", profile)
-//     });
-// }, []);
 
-// Handlechange for logging in
+
+const [users, setUsers] = useState([]);
+const url = {
+  api: "https://secret-refuge-99565.herokuapp.com/api",
+  endpoint: "/users/",
+};
+
+
+function getUsers() {
+  const url_api = `${url.api}${url.endpoint}`;
+  fetch(url_api)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      setUsers(data);
+    });
+}
+
+
+useEffect(() => {
+getUsers()
+}, []);
+
+
+
+
    const handleChange = (event) => {
     setSignIn ({...signIn, [event.target.id]: event.target.value})
    }
-  //  console.log(signIn)
+  
   const loginUrl = `https://secret-refuge-99565.herokuapp.com/api/users/signin`
   const config = {
     headers: {
@@ -59,16 +69,26 @@ function App() {
     }
   }
 
+
+  
   const handleSubmit = (event) => {
     event.preventDefault()
-  axios.post(loginUrl, signIn, config)
-    .then(res => {
-      console.log(res.data)
-      setToken(res.data.token)
-      (navigate('/home'))
-    }
+     for (let i = 0; i <= users.length - 1 ; i++) {
+       if(users[i].username === signIn.username){
+        console.log('valid')
+        setSignIn({...signIn, valid: 'valid'})
+         axios.post(loginUrl, signIn, config)
+          .then(res => {
+            console.log(res.data)
+            setToken(res.data.token)
+            (navigate('/home'))
+          })
+      } else {
+        console.log('invalid')
+        setSignIn({...signIn, valid: 'invalid'})
+      }
       
-  )
+    }
   }
 
   return (
@@ -79,8 +99,8 @@ function App() {
     
       <main>
         <Routes>
-          <Route path="/" element={<Landing handleSubmit={handleSubmit} handleChange={handleChange}/>} />
-          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/" element={<Landing handleSubmit={handleSubmit} handleChange={handleChange} signIn={signIn}/>} />
+          <Route path="/SignUp" element={<SignUp getUsers={getUsers} />} />
           <Route path="/home" element={<Home token={token}/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/myposts" element={<MyPosts/>} />

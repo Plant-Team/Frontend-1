@@ -1,7 +1,7 @@
 
 import {Link} from 'react-router-dom'
 
-const LandingNav = ( {handleChange, handleSubmit} ) => {
+const LandingNav = ( {handleChange, handleSubmit, signIn} ) => {
     return (
       <>
       <div className='landing-format'>
@@ -16,6 +16,7 @@ const LandingNav = ( {handleChange, handleSubmit} ) => {
           <input onChange={(event) => handleChange (event)} type="text" id="username" placeholder="username" />
           <label htmlFor="password">Password</label>
           <input onChange={(event) => handleChange (event)} type="password" id="password" placeholder="password" />
+          <p className={signIn.valid}><span className='valid-default-signin' >User name and password should match.</span></p>
           <button>Login</button>
           <p className='create-account'><Link className='create-account-link'  to='/SignUp'>Create an Account</Link></p>
         </form>

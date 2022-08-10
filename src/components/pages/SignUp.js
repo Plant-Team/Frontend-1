@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const SignUp = () => {
+const SignUp = ({getUsers}) => {
 
   const navigate = useNavigate()
   const [user, setUser] = useState({
@@ -32,13 +32,18 @@ const SignUp = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    
     if(user.password === user.confirmPassword) {
         if(user.password.length && user.confirmPassword.length >= 8 ) {
        
         console.log('valid')
         setUser({...user, valid: 'valid'})
         axios.post(`https://secret-refuge-99565.herokuapp.com/api/users/signup`, user)
-        .then(() => (navigate('/')))
+        .then(() => {
+          getUsers()
+          navigate('/')
+        })
+        
       } else {
         alert('password should be 8 characters or more!! ')
       }
