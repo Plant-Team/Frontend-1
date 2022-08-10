@@ -30,7 +30,7 @@ setQuery(event.target.value)
 }
 function handleSearch(event) {
   event.preventDefault()
-  const Search = posts.filter((post) => {
+  const Search = posts((post) => {
     if(post.name) {
       return post.name.includes(query)
     }
@@ -39,11 +39,12 @@ console.log(Search)
 setPosts(Search)
 
 }
+const reversed = [...posts].reverse();
   return (
 <>
   <Search handleChange={handleChange} handleSearch={handleSearch}/>
       <div className='posts'>
-        {posts.map((post, index) => {
+        {reversed.map((post, index) => {
           return (
             <div key={index} >
             <Card style={{ width: "18rem" }}>
