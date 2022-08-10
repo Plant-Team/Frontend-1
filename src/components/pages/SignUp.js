@@ -56,6 +56,7 @@ const SignUp = () => {
         <form onSubmit={handleSubmit} className="signup-form">
           <div>
             <label className="label" htmlFor="firstname">First Name</label>
+
             <input 
             onChange={handleChange}
              type="text"
@@ -70,7 +71,7 @@ const SignUp = () => {
             type="text"
             id="lastname"
             placeholder="last name" required />
-          </div>
+           </div>
 
           <div>
             <label className="label" htmlFor="username">username</label>
