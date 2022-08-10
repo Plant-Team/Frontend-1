@@ -30,6 +30,33 @@ function App() {
 //setting the token in state
    const [token, setToken] = useState('')
 
+// API call for user, sending it to Navigate
+// Profile State
+const [profile, setProfile] = useState(null)
+// 
+
+const [findProfile, setFindProfile] = useState(null)
+
+const {id} = useParams()
+// Use effect for profile
+useEffect(() => {
+  // write you fetch or axios here
+  axios
+    .get(`https://secret-refuge-99565.herokuapp.com/api/users/`)
+    .then((res) => {
+      // write a loop through each profile...
+      var n = 1
+      for(let i = 0; i< res.data.length;i++) {
+        console.log()
+      }
+      // if res.data's [i].username (set a variable for this named findProfile) matches the signIn .username then set profile to res.data[the index._id]
+    setProfile(res.data[(n)]._id);
+    console.log("The profiles on App are", res.data)
+    })
+      
+    
+}, []);
+
 
 
 const [users, setUsers] = useState([]);
@@ -59,8 +86,9 @@ getUsers()
 
    const handleChange = (event) => {
     setSignIn ({...signIn, [event.target.id]: event.target.value})
+    console.log("signin username is", signIn.username)
    }
-  
+
   const loginUrl = `https://secret-refuge-99565.herokuapp.com/api/users/signin`
   const config = {
     headers: {
@@ -73,6 +101,7 @@ getUsers()
   
   const handleSubmit = (event) => {
     event.preventDefault()
+
      for (let i = 0; i <= users.length - 1 ; i++) {
        if(users[i].username === signIn.username){
         console.log('valid')
@@ -89,6 +118,14 @@ getUsers()
       }
       
     }
+
+  axios.post(loginUrl, signIn, config)
+    .then(res => {
+      // console.log("the data is" + res.data)
+      setToken(res.data.token)
+      (navigate('/home'))
+    })
+
   }
 
   return (
@@ -106,7 +143,7 @@ getUsers()
           <Route path="/myposts" element={<MyPosts/>} />
           <Route path="/createpost" element={<CreatePost token={token}/>} />
           <Route path='/plants/:id' element={<EditPost token={token}/>}/>
-          <Route path='/Profile/:id' element={<Profile token={token}/>}/>
+          <Route path='/Profile/:id' element={<Profile token={token} profile={profile}/>}/>
          
           {/* <Route path="/saved" element={<Saved/>} /> */}
         </Routes>
