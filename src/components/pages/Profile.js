@@ -76,10 +76,10 @@ return (
         <input onChange={handleChange} id="email" value={isprofile.email} />
       </div>
 
-      <div>
+      {/* <div>
             <label htmlFor="password" className="edit-label">password</label>
         <input onChange={handleChange} id="password" value={isprofile.password} />
-      </div>
+      </div> */}
 
       {/* <div>
             <label htmlFor="confirmPassword" className="edit-label">confirm password</label>
