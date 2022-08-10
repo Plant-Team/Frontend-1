@@ -24,7 +24,7 @@ function handleSubmit(event) {
     event.preventDefault()
     axios.post('https://secret-refuge-99565.herokuapp.com/api/plants', post, config)
     .then(() => {
-        console.log(post)
+        console.log("the post is" + post)
         navigate('/home')
     })
 }   

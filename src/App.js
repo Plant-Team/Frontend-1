@@ -31,26 +31,24 @@ function App() {
 
 // API call for user, sending it to Navigate
 // Profile State
-// const [profile, setProfile] = useState(null)
-// // 
-// const {id} = useParams()
-// // Use effect for profile
-// useEffect(() => {
-//   // write you fetch or axios here
-//   axios
-//     .get(`https://secret-refuge-99565.herokuapp.com/api/users/`)
-//     .then((res) => {
-      
-//       setProfile(res.data[1]._id);
-//       console.log("response from data id App", profile)
-//     });
-// }, []);
+const [profile, setProfile] = useState(null)
+// 
+const {id} = useParams()
+// Use effect for profile
+useEffect(() => {
+  // write you fetch or axios here
+  axios
+    .get(`https://secret-refuge-99565.herokuapp.com/api/users/`)
+    .then((res) => {
+    setProfile(res.data[1]._id);
+    console.log("The profile on App is", profile)
+    });
+}, []);
 
 // Handlechange for logging in
    const handleChange = (event) => {
     setSignIn ({...signIn, [event.target.id]: event.target.value})
    }
-  //  console.log(signIn)
   const loginUrl = `https://secret-refuge-99565.herokuapp.com/api/users/signin`
   const config = {
     headers: {
@@ -63,12 +61,10 @@ function App() {
     event.preventDefault()
   axios.post(loginUrl, signIn, config)
     .then(res => {
-      console.log(res.data)
+      console.log("the data is" + res.data)
       setToken(res.data.token)
       (navigate('/home'))
-    }
-      
-  )
+    })
   }
 
   return (
@@ -86,7 +82,7 @@ function App() {
           <Route path="/myposts" element={<MyPosts/>} />
           <Route path="/createpost" element={<CreatePost token={token}/>} />
           <Route path='/plants/:id' element={<EditPost token={token}/>}/>
-          <Route path='/Profile/:id' element={<Profile token={token}/>}/>
+          <Route path='/Profile/:id' element={<Profile token={token} profile={profile}/>}/>
          
           {/* <Route path="/saved" element={<Saved/>} /> */}
         </Routes>
