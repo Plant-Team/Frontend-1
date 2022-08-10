@@ -6,9 +6,10 @@ If you need to change some of your account details, you can go to your account t
 
 ## PICTURES OF WEBSITE HERE
 
+![alt text](https://github.com/Plant-Team/Frontend/blob/main/readme/Screenshot%202022-08-10%20at%2011.37.14%20AM.png?raw=true)
 ![alt text](https://github.com/Plant-Team/Frontend/blob/main/readme/Screenshot%202022-08-10%20at%2011.08.45%20AM.png?raw=true)
 ![alt text](https://github.com/Plant-Team/Frontend/blob/main/readme/Screenshot%202022-08-10%20at%2011.27.12%20AM.png?raw=true)
-![alt text](https://)
+![alt text](https://github.com/Plant-Team/Frontend/blob/main/readme/Screenshot%202022-08-10%20at%2011.36.04%20AM.png?raw=true)
 
 ## TECHNOLOGIES USED
 The front end of this application is built in React, and uses HTML, CSS, Bootstrap, and JavaScript.
