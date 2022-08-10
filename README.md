@@ -23,9 +23,12 @@ All you need to work PLANT WORLD is a modern web browser and you're good to go!
 
 ## WIREFRAMES
 These were the concepts for the site created in canva.
-![alt text](https://)
-![alt text](https://)
-![alt text](https://)
+![alt text](https://media.git.generalassemb.ly/user/43502/files/f5c0cfa8-0df6-469f-836a-65efd879ad0c)
+![alt text](https://media.git.generalassemb.ly/user/43502/files/619711ce-3445-43ca-bbf6-cd5d07051dc0)
+![alt text](https://media.git.generalassemb.ly/user/43502/files/ad08858c-f9f1-4bcc-8097-c575f15aea81)
+![alt text](https://media.git.generalassemb.ly/user/43502/files/551a2494-ae5f-45cc-897b-6e81745d6419)
+![alt text](https://media.git.generalassemb.ly/user/43502/files/b27f6db5-3e92-4a35-9b4a-83769964f740)
+![alt text](https://media.git.generalassemb.ly/user/43502/files/29c0fa4a-13a8-4c74-bf04-4829dc3c3af4)
 
 ## APPROACH TAKEN
 We started off planning our application in concept, followed by User Stories. Once the User Stories were complete, we were able to follow a RESTful approach to make our proposed ideas fit into CRUD methods. Then we created wireframes. Our wireframes were the guide for the Frontend, and from those we could figure out our components. Our Backend was the first thing to tackle.
