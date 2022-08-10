@@ -57,6 +57,7 @@ return (
     <form onSubmit={handleSubmit} className='edit-form'>
 
       <div>
+
         <label htmlFor="firstname" className="edit-label">first name</label>
         <input onChange={handleChange} id="firstname" value={isprofile.firstname} />
       </div>
