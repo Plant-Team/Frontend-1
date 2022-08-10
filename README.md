@@ -36,3 +36,5 @@ We used jira to track our progress and to not stray away from accomplishing our 
 Once our components were created, the biggest challenge was working around Authorization in order to pull information that required permissions. What we ended up with was pretty basic, but it works. There's still a lot to learn about the relationship between Frontend and Backend when Auth is in between the two, and in the future, we should probably have left Authorization to the end of the project.
 
 [CLICK THIS LINK TO VISIT THE LIVE SITE](https://chimerical-malabi-77d9ef.netlify.app/)
+
+[CLICK THIS LINK TO VISIT PLANNING STAGES](https://media.git.generalassemb.ly/user/43502/files/29c0fa4a-13a8-4c74-bf04-4829dc3c3af4)
