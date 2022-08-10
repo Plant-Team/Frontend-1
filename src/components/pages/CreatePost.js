@@ -54,7 +54,7 @@ function handleSubmit(event) {
         <label className="create-label" htmlFor="location">Location</label>
         <input onChange={handleChange} type="text" id="location" placeholder="location" />
       </div>
-        <button type='submit'>Create</button>
+        <button className="create-button" type='submit'>Create</button>
       </form>
     </>
   );
