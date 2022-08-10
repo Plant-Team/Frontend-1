@@ -61,10 +61,10 @@ const Navigation = ( {signIn, token} ) => {
         </ul>
         <div className="user-menu">
 
-          <p>Welcome <Link to={`/Profile/${users}`}>{signIn.username}!</Link></p>
+          <p className="welcome">Welcome <Link to={`/Profile/${users}`}>{signIn.username}!</Link></p>
 
 
-          <Link to='/'><p>log out</p></Link>
+          <Link to='/'><p className="logout">log out</p></Link>
         </div>
       </nav>
     </>

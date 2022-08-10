@@ -467,3 +467,6 @@ width: 100vw;
 .app-title{
   color: white
 }
+.welcome{
+  font-weight: bold;
+}
