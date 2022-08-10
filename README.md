@@ -1,4 +1,4 @@
-# PLANNING STRATEGY
+# PLANT WORLD README
 
 PLANT WORLD is an application for posting plants that you have grown and finding plants grown by people in your local area. 
 When you first enter the site, you are first prompted to sign in, and if you don't have a log in, you can create an account. Once you are logged in, you are routed to the home page, where you can see all of the plants posted by other users. From here you can post your own plants. Once posted, you  can edit and delete those plants if you need to.
