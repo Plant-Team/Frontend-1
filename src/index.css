@@ -456,6 +456,9 @@ width: 100vw;
 .landing-text{
   font-family:'Quicksand', sans-serif;
 }
+.menu{
+  display: none;
+}
 
 @media (max-width: 678px) {
   .menu-nav li {
@@ -472,6 +475,9 @@ width: 100vw;
   }
   .user-menu{
     display: none;
+  }
+  .menu{
+    display: inline;
   }
 }
 
