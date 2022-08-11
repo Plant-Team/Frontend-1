@@ -60,7 +60,7 @@ const Navigation = ( {signIn, token} ) => {
         {/* <Link to='/saved'><li>Saved</li></Link> */}
         {/* <Link to='/myposts'><li>My Posts</li></Link> */}
         <Link to='/About'><li>About</li></Link>
-        <CgMenuRound size={30} />
+        <CgMenuRound size={30} className='menu'/>
         </ul>
         <div className="user-menu">
           <p className="welcome">Welcome <Link to={`/Profile/${users}`}>{signIn.username}!</Link></p>
